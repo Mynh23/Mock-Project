@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "af330138-5d4b-45e9-a276-ec64be660f96",
+		"name": "Mock Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vinh\",\r\n    \"email\": \"dhvinh@gmail.com\",\r\n    \"password\": \"123123\",\r\n    \"gender\": \"Male\",\r\n    \"phone\": \"0123123123\",\r\n    \"address\": \"safddsf\",\r\n    \"role\": \"Employee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/admin/employees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/admin/employees",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/employees/EMP003",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employees",
+						"EMP003"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/admin/employees/EMP001",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"employees",
+						"EMP001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee (by Admin)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/admin/employees?empId=EMP003&role=Admin",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "EMP003"
+						},
+						{
+							"key": "role",
+							"value": "Admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee (by Employee)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vinh\",\r\n    \"email\": \"dhvinh@gmail.com\",\r\n    \"password\": \"123123123\",\r\n    \"gender\": \"Male\",\r\n    \"phone\": \"0123123123\",\r\n    \"address\": \"safddsf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employees/EMP003",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employees",
+						"EMP003"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
