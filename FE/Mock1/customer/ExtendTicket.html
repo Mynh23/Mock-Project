@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Bootstrap/fontawesome-free-5.15.2-web/css/all.css" />
+    <link rel="stylesheet" href="/css/List.css" />
+</head>
+<style>
+    .billed{
+        text-align: start;
+    }
+</style>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-right" style="color: #49516f" id="navbar">
+        <a href="#default" id="logo" class="navbar-brand">CAR PARKING COMPANY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse custom-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Manage Customer
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="edit_employee.html">Monthly Customer</a>
+                      <a class="dropdown-item" href="EmployeeSideDaily.html">Daily Customer</a>
+                  </div>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="TrackingPage.html">Tracking</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Ticket
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="EmployeeSideDaily.html">Daily Ticket</a>
+                      <a class="dropdown-item" href="ExtendTicket.html">Extend</a>
+                  </div>
+              </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        EmpName
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="edit_employee.html">Edit</a>
+                        <a class="dropdown-item" href="/html/Login.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <script>
+            // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (
+                    document.body.scrollTop > 80 ||
+                    document.documentElement.scrollTop > 80
+                ) {
+                    document.getElementById("navbar").style.padding = "20px 10px";
+                    document.getElementById("navbar").style.backgroundColor = "#49516F";
+                } else {
+                    document.getElementById("navbar").style.padding = "50px 10px";
+                    document.getElementById("navbar").style.backgroundColor =
+                        "transparent";
+                }
+            }
+        </script>
+
+    </header>
+    <img class="Centered" src="/img/2.jpg" alt="ImageFPT" width="100%" height="200px"
+        style="filter: brightness(60%)" />
+    <div class="container mt-5 mb-3" style="min-height: 500px;">
+        <form id="validate-extend-ticket">
+            <div class="row">
+                <h1 class="text-center">Extend</h1>
+                <div class="col-md-6">
+                    <label class="form-label">ID</label>
+                    <input class="form-control" type="text" placeholder="ID" name="inputCarID">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Date</label>  
+                    <input type="date" class="form-control" name="inputDate">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Type</label>
+                    <select class="form-select" name="inputType">
+                        <option value="">--Select ticket--</option>
+                        <option value="normal">Normal ticket</option>
+                        <option value="vip">Deluxe ticket</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Price</label>
+                    <input class="form-control" readonly type="text">
+                </div>
+            </div>
+            <br>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-success custom-btn" data-toggle="modal">Extend</button>
+            </div>
+        </form>
+    </div>
+    <footer class="text-center text-white" style="background-color: #49516f">
+        <div class="container p-4">
+            <section class="">
+                <form action="">
+                    <div class="footer-contact-info-outer">
+                        <div class="container-fluid">
+                            <div class="">
+                                <div class="row contact-info-row">
+                                    <div class="col-lg-4">
+                                        <div class="footer-contact-info">
+                                            <div class="icon">
+                                                <i class="fas fa-phone"></i>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-content-label">
+                                                    <span class="wc-editable" data-pk="ws_call_us_now"
+                                                        data-type="text">Call us now</span>
+                                                </div>
+                                                <div class="info-content-text">
+                                                    <a href="tel:1234567890"><span class="wc-editable"
+                                                            data-pk="ws_contact_phone_number"
+                                                            data-type="text">123.456.7890</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="footer-contact-info">
+                                            <div class="icon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-content-label">
+                                                    <span class="wc-editable" data-pk="ws_send_us_a_message"
+                                                        data-type="text">Or send us a message</span>
+                                                </div>
+                                                <div class="info-content-text">
+                                                    <a
+                                                        href="mailto:&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;"><span
+                                                            class="wc-editable" data-pk="ws_contact_email_address"
+                                                            data-type="text">&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-contact-info">
+                                            <div class="icon">
+                                                <i class="fas fa-home"></i>
+                                            </div>
+                                            <div class="info-content">
+                                                <div class="info-content-label">
+                                                    <span class="wc-editable" data-pk="ws_send_us_a_message"
+                                                        data-type="text">Our HomePage</span>
+                                                </div>
+                                                <div class="info-content-text">
+                                                    <a href="EmployeeSide.html"> HomePage </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2021 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">Car Parking Company</a>
+        </div>
+    </footer>
+    <div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalTitle" aria-hidden="true" style="color: black;">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h3 class="modal-title text-uppercase" style="color: #49516F;"id="invoiceModalTitle">Extend</h3>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="d-flex justify-content-center row">
+                <div class="col-md-12">
+                  <div class="p-3 bg-white rounded">
+                    <div class="row">
+                      <div class="col-md-10">
+                        <div class="billed">
+                          <span class="font-weight-bold">Billed: </span
+                          ><span class="ml-1">Jasper Kendrick</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Date: </span
+                          ><span class="ml-1">May 13, 2020</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Pass ID: </span
+                          ><span class="ml-1">#1345345</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Vehicle ID: </span
+                          ><span class="ml-1">43-D1-12345</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Slot ID: </span
+                          ><span class="ml-1">S1</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Area ID: </span
+                          ><span class="ml-1">A1</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Service</th>
+                              <th>Type</th>
+                              <th>Start Date</th>
+                              <th>Expired</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Monthly Parking</td>
+                              <td>VIP</td>
+                              <td>31/03/2021</td>
+                              <td>30/04/2021</td>
+                              <td>34</td>
+                            </tr>
+                            <tr>
+                              <td>Fine</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>12</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td style="font-weight: bold;">Total</td>
+                              <td>46</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Pay</button>
+          </div>
+      </div>
+      </div>
+  </div>
+  <script src="/Bootstrap/js/jquery-3.6.0.min.js"></script>
+  <script src="/Bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/Bootstrap/js/jquery.validate.min.js"></script>
+  
+  <script src="/js/validation.js"></script>
+    <script>
+        var form = $("#validate-extend-ticket");    
+          $('#validate-extend-ticket').on('submit', function(e){
+            if(form.valid()==true){$('#invoiceModal').modal('show');}
+          e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="styleSheet" href="/Bootstrap/css/bootstrap.min.css" />
+    <link rel="styleSheet" href="/css/List.css" />
+    <link rel="styleSheet" href="/Bootstrap/fontawesome-free-5.15.2-web/css/all.css" />
+  </head>
+ 
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-right"
+        style="color: #49516f"
+        id="navbar"
+      >
+        <a href="#default" id="logo" class="navbar-brand"
+          >CAR PARKING COMPANY</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse custom-nav" id="navbarSupportedContent" >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="HomePage.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="AdminSide.html">Manage Employee</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="UpdatePrice.html">Update Price</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="DashBoard.html">Report</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Admin
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="Login.html">Log Out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <script>
+        // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+        window.onscroll = function () {
+          scrollFunction();
+        };
+
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 80 ||
+            document.documentElement.scrollTop > 80
+          ) {
+            document.getElementById("navbar").style.padding = "20px 10px";
+            document.getElementById("navbar").style.backgroundColor = "#49516F";
+          } else {
+            document.getElementById("navbar").style.padding = "50px 10px";
+            document.getElementById("navbar").style.backgroundColor =
+              "transparent";
+          }
+        }
+      </script>
+
+    </header>
+    <body >
+    <img
+      class="Centered"
+      src="/img/2.jpg"
+      alt="ImageFPT"
+      width="100%"
+      height="200px"
+      style="filter: brightness(60%)"
+    />
+    <section>
+      <br />
+      <div class="container-xl"style="min-height:800px; " >
+        <div class="table-responsive">
+            <div class="table-wrapper">
+               
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="show-entries">
+                                    <span>Show</span>
+                                    <select>
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                    </select>
+                                    <span>entries</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <h2 class="text-center"> <b>Manage Employees</b></h2>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="search-box">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fas fa-search"></i></span>
+                                        <input type="text" class="form-control" placeholder="Search&hellip;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+
+                                <th>EmpID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Gender</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Thomas Hardy</td>
+                                <td>thomashardy@mail.com</td>
+                                <td>89 Chiaroscuro Rd, Portland, USA</td>
+                                <td>(171) 555-2222</td>
+                                <td>Male</td>
+                                <td>Employee</td>
+
+                                <td>
+
+                                    <a onclick="$('#editEmployeeModal').modal()" href="javascript:void(0)" class="edit"
+                                        data-toggle="modal"><i class="fas fa-edit"></i></a>
+
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="border border-light p-3 mb-4">
+                      <div class="text-center">
+                        <a href="add_user.html">
+                          <button type="button" class="btn btn-success" > Add Employee </button>
+                        </a>
+                      </div>
+                  </div>
+                    <div class="clearfix">
+                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a href="#">Previous</a></li>
+                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- EditEmployeeModal -->
+    <div id="editEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Employee</h4>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>EmpID</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <select class="selectpicker form-control ">
+                                <option disabled>--Role--</option>
+                                <option>Admin</option>
+                                <option>User</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-success" value="Save">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </section>
+  </body>
+    <footer class="text-center text-white" style="background-color: #49516f">
+      <div class="container p-4">
+        <section class="">
+          <form action="">
+            <div class="footer-contact-info-outer">
+              <div class="container-fluid">
+                <div class="">
+                  <div class="row contact-info-row">
+                    <div class="col-lg-4">
+                      <div class="footer-contact-info">
+                        <div class="icon">
+                          <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                          <div class="info-content-label">
+                            <span
+                              class="wc-editable"
+                              data-pk="ws_call_us_now"
+                              data-type="text"
+                              >Call us now</span
+                            >
+                          </div>
+                          <div class="info-content-text">
+                            <a href="tel:1234567890"
+                              ><span
+                                class="wc-editable"
+                                data-pk="ws_contact_phone_number"
+                                data-type="text"
+                                >123.456.7890</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                      <div class="footer-contact-info">
+                        <div class="icon">
+                          <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                          <div class="info-content-label">
+                            <span
+                              class="wc-editable"
+                              data-pk="ws_send_us_a_message"
+                              data-type="text"
+                              >Or send us a message</span
+                            >
+                          </div>
+                          <div class="info-content-text">
+                            <a
+                              href="mailto:&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;"
+                              ><span
+                                class="wc-editable"
+                                data-pk="ws_contact_email_address"
+                                data-type="text"
+                                >&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="footer-contact-info">
+                        <div class="icon">
+                          <i class="fas fa-home"></i>
+                        </div>
+                        <div class="info-content">
+                          <div class="info-content-label">
+                            <span
+                              class="wc-editable"
+                              data-pk="ws_send_us_a_message"
+                              data-type="text"
+                              >Our HomePage</span
+                            >
+                          </div>
+                          <div class="info-content-text">
+                            <a href="HomePage.html"> HomePage </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2021 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >Car Parking Company</a
+        >
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+   
+  
+</html>

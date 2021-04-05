@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Page</title>
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Bootstrap/fontawesome-free-5.15.2-web/css/all.css" />
+    <link rel="stylesheet" href="/css/List.css" />
+    <style>
+      .error{
+        color:red;
+      }
+      .form-group{
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-right" style="color: #49516f" id="navbar">
+        <a href="#default" id="logo" class="navbar-brand">CAR PARKING COMPANY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse custom-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="EmployeeSide.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Manage Customer
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="Monthly.html">Monthly Customer</a>
+                      <a class="dropdown-item" href="DailyParking.html">Daily Customer</a>
+                  </div>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="TrackingPage.html">Tracking</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Ticket
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="EmployeeSideDaily.html">Daily Ticket</a>
+                      <a class="dropdown-item" href="ExtendTicket.html">Extend</a>
+                  </div>
+              </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        EmpName
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="edit_employee.html">Edit</a>
+                        <a class="dropdown-item" href="/html/Login.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <script>
+        // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+        window.onscroll = function () {
+          scrollFunction();
+        };
+
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 80 ||
+            document.documentElement.scrollTop > 80
+          ) {
+            document.getElementById("navbar").style.padding = "20px 10px";
+            document.getElementById("navbar").style.backgroundColor = "#49516F";
+          } else {
+            document.getElementById("navbar").style.padding = "50px 10px";
+            document.getElementById("navbar").style.backgroundColor =
+              "transparent";
+          }
+        }
+      </script>
+
+    </header>
+    <img
+      class="Centered"
+      src="/img/2.jpg"
+      alt="ImageFPT"
+      width="100%"
+      height="200px"
+      style="filter: brightness(60%)"
+    />
+    <section>
+      <div class="container-fluid mt-3 mb-3" style="min-height: 600px">
+                <form method="" id="dailyPassForm" onsubmit="openModal()">
+                  <div class="row">
+                    <h1 class="text-center">Daily Customer</h1>
+                    <div class="col-lg-6 row">
+                      <div class="col-lg-4">                                         
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="form-group row">
+                          <label for="inputFirstName" class="col-lg-4">Name:</label>
+                          <div class="col-lg-8">
+                            <input type="text" class="form-control" name="inputName"
+                              id="inputFirstName">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputPhone" class="col-lg-4">Phone:</label>
+                          <div class="col-lg-8">
+                            <input type="text" class="form-control" name="inputPhone">
+                          </div>
+                        </div>  
+                        <div class="form-group row">
+                          <label for="ChooseType" class="col-lg-4">Type:</label>
+                          <div class="col-lg-8">
+                            <select class="form-select" style="width: 100%;" name="ChooseType" id="ChooseType"
+                              onChange="chooseType();">
+                              <option value="">Choose Type</option>
+                              <option value="800.000/Month">Normal Ticket</option>
+                              <option value="1.000.000/Month">Deluxe Ticket</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputPrice" class="col-lg-4">Price:</label>
+                          <div class="col-lg-8">
+                            <input type="text" class="form-control" name="inputPrice"
+                              id="inputPrice" readonly un>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputVehicleID" class="col-lg-4">Vehicle ID:</label>
+                          <div class="col-lg-8">
+                            <input type="text" class="form-control" name="inputVehicleID">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputSlot" class="col-lg-4">Slot:</label>
+                          <div class="col-lg-8">
+                            <input type="text" class="form-control" name="inputSlot" id="inputSlot"
+                              readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 row">
+                      <div class="card">
+                        <div class="card-header" style="color: green;">
+                          <strong>Parking Area</strong>
+                        </div>
+                        <div class="card-body row">
+                            <div class="col-lg-3">                              
+                              <div>
+                                <button type="button" value="80" class="btnSlot">80</button>
+                                <button type="button" value="70" class="btnSlot">70</button>
+                              </div>
+                              <div>
+                                <button type="button" value="79" class="btnSlot">79</button>
+                                <button type="button" value="69" class="btnSlot">69</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">78</button>
+                                <button type="button" class="btnSlot">68</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">77</button>
+                                <button type="button" class="btnSlot">67</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">76</button>
+                                <button type="button" class="btnSlot">66</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">75</button>
+                                <button type="button" class="btnSlot">65</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">74</button>
+                                <button type="button" class="btnSlot">64</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">73</button>
+                                <button type="button" class="btnSlot">63</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">72</button>
+                                <button type="button" class="btnSlot">62</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">71</button>
+                                <button type="button" class="btnSlot">61</button>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div>
+                                <button type="button" class="btnSlot">60</button>
+                                <button type="button" class="btnSlot">50</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">59</button>
+                                <button type="button" class="btnSlot">49</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">58</button>
+                                <button type="button" class="btnSlot">48</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">57</button>
+                                <button type="button" class="btnSlot">47</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">56</button>
+                                <button type="button" class="btnSlot">46</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">55</button>
+                                <button type="button" class="btnSlot">45</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">54</button>
+                                <button type="button" class="btnSlot">44</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">53</button>
+                                <button type="button" class="btnSlot">43</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">52</button>
+                                <button type="button" class="btnSlot">42</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">51</button>
+                                <button type="button" class="btnSlot">41</button>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div>
+                                <button type="button" class="btnSlot">40</button>
+                                <button type="button" class="btnSlot">30</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">39</button>
+                                <button type="button" class="btnSlot">29</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">38</button>
+                                <button type="button" class="btnSlot">28</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">37</button>
+                                <button type="button" class="btnSlot">27</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">36</button>
+                                <button type="button" class="btnSlot">26</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">35</button>
+                                <button type="button" class="btnSlot">25</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">34</button>
+                                <button type="button" class="btnSlot">24</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">33</button>
+                                <button type="button" class="btnSlot">23</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">32</button>
+                                <button type="button" class="btnSlot">22</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">31</button>
+                                <button type="button" class="btnSlot">21</button>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div>
+                                <button type="button" class="btnSlot">20</button>
+                                <button type="button" class="btnSlot">10</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">19</button>
+                                <button type="button" class="btnSlot">09</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">18</button>
+                                <button type="button" class="btnSlot">08</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">17</button>
+                                <button type="button" class="btnSlot">07</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">16</button>
+                                <button type="button" class="btnSlot">06</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">15</button>
+                                <button type="button" class="btnSlot">05</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">14</button>
+                                <button type="button" class="btnSlot">04</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">13</button>
+                                <button type="button" class="btnSlot">03</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">12</button>
+                                <button type="button" class="btnSlot">02</button>
+                              </div>
+                              <div>
+                                <button type="button" class="btnSlot">11</button>
+                                <button type="button" class="btnSlot">01</button>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" id ="btnDone" class="btn btn-success custom-btn" data-toggle="modal" >Done</button>
+                  </div>
+                  <!-- Modal -->
+    <div class="modal fade" id="checkInModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h3 class="modal-title text-uppercase" style="color: #49516F;"id="invoiceModalTitle">Check In</h3>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="d-flex justify-content-center row">
+                <div class="col-md-12">
+                  <div class="p-3 bg-white rounded">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="billed">
+                          <span class="font-weight-bold">Billed: </span
+                          ><span class="ml-1">Jasper Kendrick</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Date: </span
+                          ><span class="ml-1">May 13, 2020</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Pass ID: </span
+                          ><span class="ml-1">#1345345</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Vehicle ID: </span
+                          ><span class="ml-1">43-D1-12345</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Slot ID: </span
+                          ><span class="ml-1">S1</span>
+                        </div>
+                        <div class="billed">
+                          <span class="font-weight-bold">Area ID: </span
+                          ><span class="ml-1">A1</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Service</th>
+                              <th>Time In</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Hours Parking</td>
+                              <td>8:00 PM</td>
+                              <td>34</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+      </div>
+  </div>
+                </form>
+        </div>
+    <footer class="text-center text-white" style="background-color: #49516f">
+      <div class="container p-4">
+        <section class="">
+          <form action="">
+            <div class="footer-contact-info-outer">
+              <div class="container-fluid">
+                <div class="">
+                  <div class="row contact-info-row">
+                    <div class="col-lg-4">
+                      <div class="footer-contact-info">
+                        <div class="icon">
+                          <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                          <div class="info-content-label">
+                            <span
+                              class="wc-editable"
+                              data-pk="ws_call_us_now"
+                              data-type="text"
+                              >Call us now</span
+                            >
+                          </div>
+                          <div class="info-content-text">
+                            <a href="tel:1234567890"
+                              ><span
+                                class="wc-editable"
+                                data-pk="ws_contact_phone_number"
+                                data-type="text"
+                                >123.456.7890</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                      <div class="footer-contact-info">
+                        <div class="icon">
+                          <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                          <div class="info-content-label">
+                            <span
+                              class="wc-editable"
+                              data-pk="ws_send_us_a_message"
+                              data-type="text"
+                              >Or send us a message</span
+                            >
+                          </div>
+                          <div class="info-content-text">
+                            <a
+                              href="mailto:&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;"
+                              ><span
+                                class="wc-editable"
+                                data-pk="ws_contact_email_address"
+                                data-type="text"
+                                >&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="footer-contact-info">
+                        <div class="icon">
+                          <i class="fas fa-home"></i>
+                        </div>
+                        <div class="info-content">
+                          <div class="info-content-label">
+                            <span
+                              class="wc-editable"
+                              data-pk="ws_send_us_a_message"
+                              data-type="text"
+                              >Our HomePage</span
+                            >
+                          </div>
+                          <div class="info-content-text">
+                            <a href="EmployeeSide.html"> HomePage </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2021 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >Car Parking Company</a
+        >
+      </div>
+    </footer>
+
+   
+    <script src="/Bootstrap/js/jquery-3.6.0.min.js"></script>
+    <script src="/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/Bootstrap/js/jquery.validate.min.js"></script>
+    <script src="/js/ValidateNewCustomer.js"></script>
+
+<script>
+    var form = $("#dailyPassForm");    
+      $('#dailyPassForm').on('submit', function(e){
+        if(form.valid()==true){$('#checkInModal').modal('show');}
+      e.preventDefault();
+    });
+  </script>
+  </body>
+</html>

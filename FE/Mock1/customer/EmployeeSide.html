@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="styleSheet" href="/css/List.css">
+    <link rel="styleSheet" href="/Bootstrap/css/bootstrap.min.css">
+    <link rel="styleSheet" href="/Bootstrap/fontawesome-free-5.15.2-web/css/all.css">
+    <script>
+      function loadScript(src, attr) {
+        var element = document.createElement("script");
+        element.src = src;
+        element.defer = true;
+        element.async = true;
+        if (attr) {
+          for (var x in attr) {
+            if (attr.hasOwnProperty(x)) {
+              element.setAttribute(x, attr[x]);
+            }
+          }
+        }
+        document.body.appendChild(element);
+      }
+      function downloadJSAtOnload() {
+        loadScript(
+          "https://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjFront&a=pjActionIndex&s=home&action=pjActionLoadScript&locale_id=4&gdpr=0&template=template_1&theme=theme1&md5=cb2c2bab487102e7216638f1cdf8c789"
+        );
+        loadScript("../../../api/widget/script.js", {
+          id: "vevs-signup-widget",
+          "data-template": "template_1",
+          "data-sid": "8",
+          "data-demo": "1",
+        });
+      }
+      if (window.addEventListener) {
+        window.addEventListener("load", downloadJSAtOnload, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onload", downloadJSAtOnload);
+      } else {
+        window.onload = downloadJSAtOnload;
+      }
+    </script>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-right" style="color: #49516f" id="navbar">
+        <a href="#default" id="logo" class="navbar-brand">CAR PARKING COMPANY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse custom-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="EmployeeSide.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Manage Customer
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="Monthly.html">Monthly Customer</a>
+                      <a class="dropdown-item" href="DailyParking.html">Daily Customer</a>
+                  </div>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="TrackingPage.html">Tracking</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Ticket
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="EmployeeSideDaily.html">Daily Ticket</a>
+                      <a class="dropdown-item" href="ExtendTicket.html">Extend</a>
+                  </div>
+              </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        EmpName
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="edit_employee.html">Edit</a>
+                        <a class="dropdown-item" href="/html/Login.html">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <script>
+        // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+        window.onscroll = function () {
+          scrollFunction();
+        };
+
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 80 ||
+            document.documentElement.scrollTop > 80
+          ) {
+            document.getElementById("navbar").style.padding = "20px 10px";
+            document.getElementById("navbar").style.backgroundColor = "#49516F";
+          } else {
+            document.getElementById("navbar").style.padding = "50px 10px";
+            document.getElementById("navbar").style.backgroundColor =
+              "transparent";
+          }
+        }
+      </script>
+
+    </header>
+  </head>
+  <body class="preload">
+    <div class="wrapper">
+    
+      <div class="hero-section">
+        <div class="container">
+          <div class="cms-e-section">
+            <div data-blockid="2">
+              <h1 class="cms-e-element h1 text-center text-uppercase">
+                <span
+                  class="wc-editable wc-element"
+                  data-model="pjBlockElement"
+                  data-field="text"
+                  data-type="text"
+                  data-foreign_id="2"
+                  >Book your parking space</span
+                >
+              </h1>
+            </div>
+          
+
+            <div data-blockid="14"  >
+              <img
+                loading="eager"
+                class="wc-image cms-e-element hero-img hidden wc-image"
+                src="/img/1.jpg"
+                alt=""
+                title=""
+                data-id="431"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        
+        <div
+          class="section cms-e-section-outer section-about"
+          id="section-about"
+          data-id="1"
+          data-hmac="fe7dbd708d635ae254fa349571036267"
+        >
+          <div
+            class="cms-e-group"
+            data-id="579"
+            data-hmac="3efeb1540775b472858f5e1fbd7a64e4"
+          >
+            <div class="custom-layout">
+              <div class="spacer spacer-1"></div>
+            </div>
+          </div>
+
+          <div
+            class="cms-e-group"
+            data-id="1"
+            data-hmac="f06095559732e197dcf04ee9cc07e0b1"
+          >
+            <div class="section-head">
+              <div class="container cms-e-section">
+                <div data-blockid="70">
+                  <h2 class="cms-e-element h1 text-center text-uppercase">
+                    <span
+                      class="wc-editable wc-element"
+                      data-model="pjBlockElement"
+                      data-field="text"
+                      data-type="text"
+                      data-foreign_id="70"
+                      >About our company</span
+                    >
+                  </h2>
+                </div>
+                <d  iv class="row">
+                  <div
+                    class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xs-12"
+                  >
+                    <div class="section-subtitle">
+                      <div data-blockid="72">
+                        <div
+                          class="cms-e-element text-center lead"
+                          style="color: #8c9092"
+                        >
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjBlockElement"
+                            data-field="text"
+                            data-type="textarea"
+                            data-foreign_id="72"
+                            >Write something about your company. This is some
+                            dummy text lorem ipsum text, consectetur adipisicing
+                            elit.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </d>
+
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1">
+                    <div class="paragragh">
+                      <div data-blockid="71">
+                        <div
+                          class="cms-e-element text-center"
+                          style="color: #8c9092"
+                        >
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjBlockElement"
+                            data-field="text"
+                            data-type="textarea"
+                            data-foreign_id="71"
+                            >Replace this text with your company description.
+                            Write about your products and services. Deserunt,
+                            dolor eaque odit reprehenderit ducimus nostrum
+                            similique consequatur nesciunt ut officia aut eius
+                            quia, doloremque itaque a quisquam harum iusto
+                            tenetur. Quidem at rerum debitis, reprehenderit
+                            repudiandae dolores magnam! Explicabo eos nisi,
+                            deleniti cum veritatis dolorem inventore temporibus,
+                            quisquam est architecto qui. Odio beatae fugiat
+                            ullam incidunt. Labore distinctio dolor
+                            corporis?</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="cms-e-group"
+            data-id="2"
+            data-hmac="40e6d5b3dd56abe479be41fad807b78e"
+          >
+            <ul class="section-about-images">
+              <li class="wc-thumb btn-gallery-replace">
+                <img
+                  src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                  alt=""
+                  data-v=""
+                  data-id=""
+                  class="wc-image"
+                  loading="lazy"
+                />
+              </li>
+
+              <li class="wc-thumb btn-gallery-replace">
+                <img
+                  src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                  alt=""
+                  data-v=""
+                  data-id=""
+                  class="wc-image"
+                  loading="lazy"
+                />
+              </li>
+
+              <li class="wc-thumb btn-gallery-replace">
+                <img
+                  src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                  alt=""
+                  data-v=""
+                  data-id=""
+                  class="wc-image"
+                  loading="lazy"
+                />
+              </li>
+
+              <li class="wc-thumb btn-gallery-replace">
+                <img
+                  src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                  alt=""
+                  data-v=""
+                  data-id=""
+                  class="wc-image"
+                  loading="lazy"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="section cms-e-section-outer section-services"
+          id="section-services"
+          data-id="3"
+          data-hmac="1ef8f8886264ff01d2255fb879e1cfb1"
+          data-type="plugin"
+          data-pid="13"
+        >
+          <div
+            class="cms-e-group"
+            data-id="580"
+            data-hmac="b9b8fa1eee0c24247bb1b47b778ea349"
+          >
+            <div class="custom-layout">
+              <div class="spacer spacer-1"></div>
+            </div>
+          </div>
+
+          <div
+            class="cms-e-group"
+            data-id="4"
+            data-hmac="57792a21fed81fbbae38b9db3a2b6b3e"
+          >
+            <div class="container">
+              <div class="section-head">
+                <div class="cms-e-section">
+                  <div data-blockid="73">
+                    <h2 class="cms-e-element h2 text-center text-uppercase">
+                      <span
+                        class="wc-editable wc-element"
+                        data-model="pjBlockElement"
+                        data-field="text"
+                        data-type="text"
+                        data-foreign_id="73"
+                        >Best offers</span
+                      >
+                    </h2>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xs-12"
+                    >
+                      <div class="section-subtitle">
+                        <div data-blockid="74">
+                          <div class="cms-e-element text-center lead">
+                            <span
+                              class="wc-editable wc-element"
+                              data-model="pjBlockElement"
+                              data-field="text"
+                              data-type="textarea"
+                              data-foreign_id="74"
+                              >See our special offers and get our products for
+                              affordable prices!</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="cms-e-group"
+            data-id="5"
+            data-hmac="3b74587bf57bb0708b1eccc31257e856"
+          >
+            <div class="container">
+              <div class="row columns">
+                <div class="col-md-4 col-xs-12">
+                  <div class="cms-e-section">
+                    <div data-recordid="39-field_93">
+                      <div class="wc-thumb btn-gallery-replace">
+                        <img
+                          class="wc-image cms-e-element img-responsive"
+                          src="https://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/57e3dc424354ac14ea898c7bc32e307d1222dfe055527241752f7fd0-1280-58-1601367442.jpg"
+                          alt=""
+                          title=""
+                          data-id="58"
+                        />
+                      </div>
+                    </div>
+                    <div class="columns-item">
+                      <div data-recordid="39-field_91">
+                        <h3 class="cms-e-element h5 text-uppercase">
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjContentRecord"
+                            data-field="field_91"
+                            data-type="text"
+                            data-foreign_id="39"
+                            >Online bookings</span
+                          >
+                        </h3>
+                      </div>
+                      <div class="offer-price">
+                        from <strong>$ 15.00</strong> per day
+                      </div>
+
+                      <div data-recordid="39-field_92">
+                        <div class="cms-e-element paragraph">
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjContentRecord"
+                            data-field="field_92"
+                            data-type="textarea"
+                            data-foreign_id="39"
+                            >Suspendisse urna arcu, vehicula eu vehicula et,
+                            cursus nec lorem. Nullam lectus felis, euismod nec
+                            mollis vitae, accumsan vel ligula. Praesent rhoncus
+                            ultrices gravida. In sed sapien in purus ultricies
+                            ultrices in quis nisi.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                 
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                  <div class="cms-e-section">
+                    <div data-recordid="40-field_93">
+                      <div class="wc-thumb btn-gallery-replace">
+                        <img
+                          class="wc-image cms-e-element img-responsive"
+                          src="https://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/57e2d2424353a414ea898c7bc32e307d1222dfe055527241752f7ad6-1280-59-1601367442.jpg"
+                          alt=""
+                          title=""
+                          data-id="59"
+                        />
+                      </div>
+                    </div>
+                    <div class="columns-item">
+                      <div data-recordid="40-field_91">
+                        <h3 class="cms-e-element h5 text-uppercase">
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjContentRecord"
+                            data-field="field_91"
+                            data-type="text"
+                            data-foreign_id="40"
+                            >Short-term</span
+                          >
+                        </h3>
+                      </div>
+                      <div class="offer-price">
+                        from <strong>$ 19.00</strong> per weekend
+                      </div>
+
+                      <div data-recordid="40-field_92">
+                        <div class="cms-e-element paragraph">
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjContentRecord"
+                            data-field="field_92"
+                            data-type="textarea"
+                            data-foreign_id="40"
+                            >Donec rhoncus maximus magna, eu tincidunt lectus
+                            iaculis at. Maecenas eros nunc, consectetur quis
+                            velit ut, vestibulum cursus arcu. Morbi pharetra
+                            quam eros, in mattis libero consequat a. Donec
+                            hendrerit pharetra est.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                  <div class="cms-e-section">
+                    <div data-recordid="41-field_93">
+                      <div class="wc-thumb btn-gallery-replace">
+                        <img
+                          class="wc-image cms-e-element img-responsive"
+                          src="https://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/54e6d5444d54b114a6d08279c12f3479083edbe35052794975297f-1280-60-1601367442.jpg"
+                          alt=""
+                          title=""
+                          data-id="60"
+                        />
+                      </div>
+                    </div>
+                    <div class="columns-item">
+                      <div data-recordid="41-field_91">
+                        <h3 class="cms-e-element h5 text-uppercase">
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjContentRecord"
+                            data-field="field_91"
+                            data-type="text"
+                            data-foreign_id="41"
+                            >Summer Offer</span
+                          >
+                        </h3>
+                      </div>
+                      <div class="offer-price">
+                        from <strong>$ 9.00</strong> summer only
+                      </div>
+
+                      <div data-recordid="41-field_92">
+                        <div class="cms-e-element paragraph">
+                          <span
+                            class="wc-editable wc-element"
+                            data-model="pjContentRecord"
+                            data-field="field_92"
+                            data-type="textarea"
+                            data-foreign_id="41"
+                            >Nullam eget auctor purus. Sed facilisis, sapien sed
+                            posuere pharetra, nisl velit dictum odio, ac
+                            pulvinar sapien leo a augue. Sed vitae euismod enim.
+                            Aliquam malesuada sem mi, a gravida neque dignissim
+                            sed.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="bg-dark text-center text-white">
+    
+        <div class="container p-4">
+         
+          <section class="">
+            <form action="">
+                <div class="footer-contact-info-outer">
+             <div class="container-fluid">
+                <div class="">
+                    <div class="row contact-info-row">
+                        <div class="col-lg-4 ">
+                            <div class="footer-contact-info">
+                                <div class="icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <div class="info-content-label">
+                                      <span
+                                        class="wc-editable"
+                                        data-pk="ws_call_us_now"    
+                                        data-type="text"
+                                        >Call us now</span
+                                      >
+                                    </div>
+                                    <div class="info-content-text">
+                                      <a href="tel:1234567890"
+                                        ><span
+                                          class="wc-editable"
+                                          data-pk="ws_contact_phone_number"
+                                          data-type="text"
+                                          >123.456.7890</span
+                                        ></a
+                                      >
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4">
+    
+                            <div class="footer-contact-info">
+                              <div class="icon">
+                                <i class="fa fa-envelope"></i>
+                              </div>
+                              <div class="info-content">
+                                <div class="info-content-label">
+                                  <span
+                                    class="wc-editable"
+                                    data-pk="ws_send_us_a_message"
+                                    data-type="text"
+                                    >Or send us a message</span
+                                  >
+                                </div>
+                                <div class="info-content-text">
+                                  <a
+                                    href="mailto:&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;"
+                                    ><span
+                                      class="wc-editable"
+                                      data-pk="ws_contact_email_address"
+                                      data-type="text"
+                                      >&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;</span
+                                    ></a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-4">
+    
+                            <div class="footer-contact-info">
+                              <div class="icon">
+                                <i class="fas fa-home"></i>
+                              </div>
+                              <div class="info-content">
+                                <div class="info-content-label">
+                                  <span
+                                    class="wc-editable"
+                                    data-pk="ws_send_us_a_message"
+                                    data-type="text"
+                                    >Our HomePage</span
+                                  >
+                                </div>
+                                <div class="info-content-text">
+                                    <a href="EmployeeSide.html">
+                                        HomePage
+                                    </a>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+             </div>
+                </div>
+            </form>
+          </section>
+         
+         
+         
+        </div>
+        
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div> 
+      </footer>
+    </div>
+    <noscript id="deferred-styles">
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjFront&action=pjActionLoadCss&a=pjActionIndex&widget=on&script_id=8&demo=1&template=template_1&theme=theme1&font=Lato&hmac=526ccdcf6f2d84d2748639418c6f7953&md5=566f112f0f08a5ca73f814c7cd0dd945"
+        id="deferred-sheet"
+      />
+    </noscript>
+    <script>
+      (function (w, d) {
+        var loadDeferredStyles = function () {
+          var addStylesNode = d.getElementById("deferred-styles");
+          var replacement = d.createElement("div");
+          replacement.innerHTML = addStylesNode.textContent;
+          d.body.appendChild(replacement);
+
+          var img = d.createElement("img");
+          img.onerror = function () {
+            w.setTimeout(function () {
+              d.body.classList
+                ? d.body.classList.remove("preload")
+                : (d.body.className = "");
+            }, 0);
+          };
+          img.src = d.getElementById("deferred-sheet").getAttribute("href");
+
+          addStylesNode.parentElement.removeChild(addStylesNode);
+
+          if (!(window.CSS && CSS.supports && CSS.supports("(--foo: red)"))) {
+            var pony = d.createElement("script"),
+              s = d.scripts[0];
+            pony.src =
+              "https://trials.vevs.website/web-demo/car-parking-website/core/third-party/css_vars_ponyfill/2.1.2/dist/css-vars-ponyfill.min.js";
+            pony.async = true;
+            pony.addEventListener("load", function () {
+              cssVars({
+                exclude: "[href*=googleapis]",
+              });
+            });
+            s.parentNode.insertBefore(pony, s);
+          }
+        };
+        var raf =
+          w.requestAnimationFrame ||
+          w.mozRequestAnimationFrame ||
+          w.webkitRequestAnimationFrame ||
+          w.msRequestAnimationFrame;
+        if (raf)
+          raf(function () {
+            w.setTimeout(loadDeferredStyles, 0);
+          });
+        else w.addEventListener("load", loadDeferredStyles);
+
+        if ("IntersectionObserver" in window) {
+          document.addEventListener("DOMContentLoaded", function () {
+            var lazyloadImages = document.querySelectorAll(
+              "img[data-v], img[data-src]"
+            );
+            var imageObserver = new IntersectionObserver(function (
+              entries,
+              observer
+            ) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  var image = entry.target;
+                  var v = image.getAttribute("data-v");
+                  var src = image.getAttribute("data-src");
+                  if (v) {
+                    image.src = v;
+                    image.removeAttribute("data-v");
+                  } else if (src) {
+                    image.src = src;
+                    image.removeAttribute("data-src");
+                  }
+                  imageObserver.unobserve(image);
+                }
+              });
+            });
+
+            lazyloadImages.forEach(function (image) {
+              imageObserver.observe(image);
+            });
+          });
+        } else {
+          w.addEventListener(
+            "load",
+            function () {
+              var i,
+                iCnt,
+                v,
+                vizimgDefer = d.getElementsByTagName("img");
+              for (i = 0, iCnt = vizimgDefer.length; i < iCnt; i += 1) {
+                v = vizimgDefer[i].getAttribute("data-v");
+                if (v) {
+                  vizimgDefer[i].setAttribute("src", v);
+                }
+              }
+            },
+            true
+          );
+
+          var fired = false;
+          w.addEventListener(
+            "scroll",
+            function () {
+              if (
+                (d.documentElement.scrollTop != 0 && fired === false) ||
+                (d.body.scrollTop != 0 && fired === false)
+              ) {
+                var i,
+                  iCnt,
+                  src,
+                  imgDefer = d.getElementsByTagName("img");
+                for (i = 0, iCnt = imgDefer.length; i < iCnt; i += 1) {
+                  src = imgDefer[i].getAttribute("data-src");
+                  if (src) {
+                    imgDefer[i].setAttribute("src", src);
+                  }
+                }
+                fired = true;
+              }
+            },
+            true
+          );
+        }
+      })(window, document);
+      WebFontConfig = {
+        classes: false,
+        events: false,
+        google: {
+          families: [
+            "Amiri:400,700:arabic",
+            "Arimo:400,700:hebrew",
+            "Open Sans:300,400,600,700:latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic",
+            "Noto Serif:400,700:latin,cyrillic,greek-ext,vietnamese,latin-ext,cyrillic-ext,greek",
+            "Lato:300,400,700:latin-ext&display=swap",
+          ],
+        },
+      };
+      (function (d) {
+        var wf = d.createElement("script"),
+          s = d.scripts[0];
+        wf.src =
+          "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+    </script>
+  </body>
+</html>
